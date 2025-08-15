@@ -1,19 +1,17 @@
 import string
 import random
 
-charposi = string.ascii_letters + string.digits + string.punctuation
+try:
+    pass_length = int(input("Enter the length of password you want:"))
+    
+    all_characters = string.ascii_letters + string.digits + string.punctuation
+    
+    password = "" 
+    
+    for _ in range(pass_length):
+        password += random.choice(all_characters) 
+            
+    print(password)
 
-passlength = int(input("Enter the length of password you want:"))
-
-password = []
-i = 0
-while (i < passlength):
-    password.insert(i,random.choice(charposi))
-    i = i + 1
-
-newpassword = ''.join(password)
-print(newpassword)
-
-
-
-
+except ValueError:
+    print("That's not a valid number! Please enter a number for the length.")
